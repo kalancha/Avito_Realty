@@ -9,9 +9,9 @@ const routes = [
     component: () => import('@/views/Main.vue')
   },
   {
-    path: '/detInf/:cardId',
-    name: 'detInf',
-    component: () => import('@/views/detInf.vue')
+    path: '/rent/:cardId',
+    name: 'Rent',
+    component: () => import('@/views/Rent.vue')
   }
 ]
 

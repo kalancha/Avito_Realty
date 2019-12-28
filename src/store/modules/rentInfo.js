@@ -28,7 +28,7 @@ export default {
             return state.cards
         },
         getInfo(state){
-            return state.info
+            return state.info[0]
         }
     }
 }

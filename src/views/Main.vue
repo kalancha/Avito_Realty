@@ -11,21 +11,26 @@
       ></card>
    </div>
 </template>
+
 <script>
 import card from "@/components/card.vue";
 import { mapGetters, mapActions } from "vuex";
+
 export default {
    name: "Main",
    components: {
       card
    },
+
    computed: mapGetters(["allCards"]),
    methods: mapActions(["fetchCards"]),
+
    async mounted() {
       this.fetchCards();
    }
 };
 </script>
+
 <style lang="less" scoped>
 .layout {
    padding: 20px 0px;
@@ -34,6 +39,7 @@ export default {
    grid-gap: 30px;
    justify-content: center;
 }
+
 @media (max-width: 400px) {
    .layout {
       grid-template-columns: repeat(auto-fit, minmax(280px, 280px));

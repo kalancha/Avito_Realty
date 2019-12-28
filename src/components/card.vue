@@ -1,28 +1,30 @@
 <template>
    <div class="card">
       <img class="image" :src="previewImage" />
-      <router-link :to="{ name: 'detInf', params: { cardId: this.id }}" target="_blank">{{title}}</router-link>
+      <router-link :to="`/rent/${this.id}`" target="_blank">{{title}}</router-link>
       <p>{{price}}</p>
       <p>{{address}}</p>
    </div>
 </template>
+
 <script>
 export default {
    name: "card",
    props: {
-      address: String,
-      title: String,
+      address: {
+         type: String,
+         default: ""
+      },
+      title: {
+         type: String,
+         default: ""
+      },
       previewImage: String,
-      price: String,
+      price: {
+         type: String,
+         default: ""
+      },
       id: Number
-   },
-   methods: {
-      href() {
-         this.$router.push(
-            { name: "detInf", params: { cardId: this.id } },
-            "_blank"
-         );
-      }
    }
 };
 </script>
@@ -34,6 +36,7 @@ export default {
    text-align: center;
    padding-bottom: 5px;
 }
+
 .image {
    width: 100%;
    height: auto;
