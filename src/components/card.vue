@@ -1,6 +1,6 @@
 <template>
    <div class="card">
-      <img class="image" :src="previewImage" />
+      <img class="image" :src="previewImage" alt="image" />
       <router-link :to="`/rent/${this.id}`" target="_blank">{{title}}</router-link>
       <p>{{price}}</p>
       <p>{{address}}</p>
